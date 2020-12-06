@@ -5,6 +5,8 @@
     import Grid from "./grid.svelte";
     import {PersonsData} from "../../store/person-store.js";
     import NewPerson from "./new-person.svelte";
+    import SearchBar from "../common/search-bar.svelte";
+
     
     const { open }  = getContext("simple-modal");
 
@@ -14,17 +16,16 @@
 		personsData = value;
     });
     
-    console.log("Persons data", personsData);
-
-    let newPersonData = {
+    let newPersonData =() =>  {return {
         id: -1,
         firstName: "",
         lastName: "",
-        Phone: "",
+        phone: "",
         provider: "",
         city: "",
         picture: "",
-    }
+        visible: true,
+    }}
     let updatePerson = (person) => {
         const persons = [...personsData];
         if (person.id === -1) {
@@ -36,7 +37,6 @@
             return;
         }
 
-        console.log(person);
         for (var i = 0; i < persons.length; i++) {
             if (persons[i].id === person.id) {
                 persons[i] = person;
@@ -50,18 +50,43 @@
         return person[0];
     };
 
-    let editAndNewPerson = id => {
+    let editPerson = id => {
         open(personForm, { personModal: getPersonByid(id), onUpdate: updatePerson }, { transitionWindow: fly });
     }
-
+    let hdlNewPerson = id => {
+        
+        open(personForm, { personModal: newPersonData() , onUpdate: updatePerson }, { transitionWindow: fly });
+    }
     let handelDeletePerson = (id) => {
         const persons = [...personsData];
         let filtredPersons = persons.filter((p) => p.id !== id);
         console.log(id);
         personsData = filtredPersons;
     };
-</script>
- 
-<Grid Persons={personsData} hdlDelete={handelDeletePerson} hdlEdit={editAndNewPerson}/> 
 
-<NewPerson personsNew={NewPerson} hdlNew={editAndNewPerson}/>
+    let searchin = textSearch => {
+        const persons = [...personsData];
+        for(var i = 0; i < persons.length; i++){
+            let js = JSON.stringify(persons[i]);
+            if(js.includes(textSearch)){
+                persons[i].visible = true;
+            } else {
+                persons[i].visible = false;
+            }
+        }
+        personsData = persons;
+    }
+
+</script>
+
+<style>
+
+</style>
+
+<NewPerson personsNew={personsData} hdlNew={hdlNewPerson}/>
+<br/>
+<SearchBar Searching={searchin}/>
+<br/>
+<Grid Persons={personsData} hdlDelete={handelDeletePerson} hdlEdit={editPerson}/> 
+
+

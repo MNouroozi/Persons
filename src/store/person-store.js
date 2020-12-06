@@ -8,6 +8,7 @@ export const PersonsData = writable([
         provider: "پتروشیمی",
         city: "شیراز",
         picture: "./avator.png",
+        visible:true
     },
     {
         id: 1,
@@ -17,6 +18,7 @@ export const PersonsData = writable([
         provider: "پارس جنوبی",
         city: "عسلویه",
         picture: "./avator.png",
+        visible:true
     },
     {
         id: 2,
@@ -26,6 +28,7 @@ export const PersonsData = writable([
         provider: "صنعت شمال",
         city: "ساری",
         picture: "./avator.png",
+        visible:true
     },
     {
         id: 3,
@@ -35,6 +38,7 @@ export const PersonsData = writable([
         provider: "پتروشیمی خوزستان",
         city: "خوزستان",
         picture: "./avator.png",
+        visible:true
     },
     {
         id: 4,
@@ -44,5 +48,6 @@ export const PersonsData = writable([
         provider: " خوزستان",
         city: "خوزستان",
         picture: "./avator.png",
+        visible:true
     },
 ]);

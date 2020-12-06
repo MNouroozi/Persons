@@ -109,9 +109,9 @@ p {
   min-height: 0.125rem;
 }
 
-.row:nth-child(2n) {
+/* .row:nth-child(2n){
   background-color: #d7d6e6;
-}
+} */
 
 .col-1,
 .col-2,
@@ -129,6 +129,7 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: default;
 }
 
 .col-1-sm {
@@ -253,18 +254,29 @@ p {
   .container {
     width: 75%;
     max-width: 60rem;
+    
+    background: #FFFFFF;
+    border: 2px solid #80EADE;
+   
+    box-sizing: border-box;
+    border-radius: 10px; 
+    text-align: center;
+    
   }
 }
-
-
-.row {
-  border-bottom: 1px solid gray;
-  }
-  /* .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
-  border-right: 1px solid gray;
-  } */
 
   .col-2 button {
     border: none;
     background: none;
     }
+
+form.container{
+  width: 75%;
+  max-width: 60rem;
+  background: #FFFFFF;
+  border: 2px solid #80EADE;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;  
+  margin: none;  
+  }

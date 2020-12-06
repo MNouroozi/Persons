@@ -66,8 +66,7 @@ button:focus {
 }
 img {
 	display: block;
-	width: 32px;
+	width: 47px;
 	border-radius: 50%;
 	float: right;
-	box-shadow: 1px 1px silver;
 	}

@@ -93,6 +93,9 @@
     color: black;
     border-radius: 0.5rem;
     background: white;
+    border: 2px solid #80EADE;
+    border-radius: 10px; 
+
   }
 
   .content {
@@ -108,16 +111,16 @@
     position: absolute;
     z-index: 1000;
     top: 1rem;
-    right: 1rem;
+    left: 1rem;
     margin: 0;
     padding: 0;
     width: 1.5rem;
     height: 1.5rem;
     border: 0;
-    color: black;
+    color: white;
     border-radius: 1.5rem;
-    background: white;
-    box-shadow: 0 0 0 1px black;
+    background: rgb(243, 76, 76);
+    box-shadow: 0 0 0 1px rgb(247, 170, 170);
     transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
                 background 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
     -webkit-appearance: none;
@@ -131,7 +134,7 @@
     top: 50%;
     width: 1rem;
     height: 1px;
-    background: black;
+    background: white;
     transform-origin: center;
     transition: height 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
                 background 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -152,7 +155,7 @@
   }
 
   .close:hover {
-    background: black;
+    background: rgb(247, 51, 17);
   }
 
   .close:hover:before, .close:hover:after {
